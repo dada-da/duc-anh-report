@@ -1,0 +1,27 @@
+**Context**
+
+- Context cung cấp cho chúng ta cách để thực hiện chia sẻ dữ liệu tới các component trong cây mà không cần truyền dữ liệu qua props theo từng cấp bậc.
+
+```js
+    // Khởi tạo 1 Context Object, giá trị của defaultValue là giá trị mặc định của props value trong Provider
+    const MyContext = React.createContext(defaultValue);
+
+    // Mỗi Context Object phải đi kèm với một Provider, nó cho phép bạn nhận về sự thay đổi của context.
+    <MyContext.Provider value={/* some value */}>
+
+    // Một React component được khởi chạy mỗi khi gía trị của context thay đổi, và nhận về giá trị của context đó.
+    <MyContext.Consumer>
+        {value => /* render something based on the context value */}
+    </MyContext.Consumer>
+
+    // Class.contextType: là một thuộc tính của class được tạo bởi React.createContext() được dùng để lấy giá trị của context.
+```
+
+**Hook**
+
+- React Hooks là một chức năng được xây dựng trong React cho phép chúng ta có thể sử dụng state và life cycle bên trong một functional components.
+- Cho phép thay thế việc sử dụng state thông thường bằng các khái niệm mới như useState, useEffect..
+  - useState(): cho phép chúng ta có thể làm việc với state bên trong functional component mà không cần chuyển nó về class component
+  - useEffect(): function nắm bắt tất cả các sự thay đổi của code
+  - useContext(): cho phép nhận về giá trị của context mỗi khi nó thay đổ
+  - useReducer(): được sử dụng để xử lý các state phức tạp và việc chia sẻ state giữa các component.
